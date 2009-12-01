@@ -15,6 +15,7 @@ class DelayedJobStatus < Scout::Plugin
       report(:status => 1)
     else
       report(:status => 0)
+      alert(:subject => "DelayedJob worker seems down", :body => "Last output of delayed_job status command is #{status_output}")
     end
   end
 end
