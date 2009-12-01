@@ -22,7 +22,7 @@ class DelayedJobStatus < Scout::Plugin
     subject = "DelayedJob worker is "
     subject += (status == 1 ? "up" : "down")
     # send an alert only on status change between two runs
-    alert(:subject => subject, :body => body) if (status == 0 and memory(:status) == 1)
+    alert(:subject => subject, :body => body) if (status != memory(:status))
     
     # remember status for next run
     remember(:status => status)
