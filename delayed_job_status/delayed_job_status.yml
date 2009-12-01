@@ -1,0 +1,5 @@
+options:
+  delayed_job_path:
+    name: DelayedJob Path
+    notes: Specify the full path to the DelayedJob script
+    default: /home/app/current/script/delayed_job
